@@ -1,4 +1,45 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
+
+<!--<% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<% end %>-->
+
+
+<center>
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item"><%= image_tag "himachal.jpg" %></div>
+            <div class="item"><%= image_tag "andaman.jpg" %></div>
+            <div class="item"><%= image_tag "sand_dunes.jpg" %></div>
+            <div class="item"><%= image_tag "meerut.jpg" %></div>
+            <div class="item"><%= image_tag "mehendi.jpg" %></div>
+            <div class="item"><%= image_tag "srinagar.jpg" %></div>
+            <!--<div class="item"><%= image_tag "thar.jpg" %></div>-->
+            <div class="item"><%= image_tag "sunsets.jpg" %></div>
+        </div>
+
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+</center>
+
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
+
+<center><iframe width="560" height="315" src="http://www.youtube.com/embed/m_AREWFSwdA" frameborder="0" allowfullscreen></iframe></center>
+
