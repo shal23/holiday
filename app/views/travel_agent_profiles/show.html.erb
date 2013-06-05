@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag(@user_profile.image_url) if @user_profile.image? %>
+
+<p>
+  <b>Name:</b>
+  <%= @travel_agent_profile.name %>
+</p>
+
+<p>
+  <b>Company name:</b>
+  <%= @travel_agent_profile.company_name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @travel_agent_profile.address %>
+</p>
+
+<p>
+  <b>Company url:</b>
+  <%= @travel_agent_profile.company_url %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @travel_agent_profile.about %>
+</p>
+
+<p>
+  <b>Avatar:</b>
+  <%= @travel_agent_profile.avatar %>
+</p>
+
+
+<%= link_to 'Edit', edit_travel_agent_profile_path(@travel_agent_profile) %> |
+<%= link_to 'Back', travel_agent_profiles_path %>

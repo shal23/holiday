@@ -1,0 +1,27 @@
+<h3>Listing deals</h3>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deals.each do |deal| %>
+  <tr>
+    <td><%= deal.title %></td>
+    <td><%= deal.description %></td>
+    <td><%= deal.url %></td>
+    <td><%= link_to 'Show', deal %></td>
+    <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
+    <td><%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deal', new_deal_path %>

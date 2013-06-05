@@ -1,4 +1,4 @@
-<h1>Posts<h3>
+<h3>Posts</h3>
 
 <p id="notice"><%= notice %></p>
 
@@ -17,17 +17,10 @@
   <%= @post.content.html_safe %>
 </p>
 
-<h3>Comments</h3>
-<%= render @post.comments %>
-<br>
- 
-<h6>Leave a comment:</h6>
-<%= render "comments/form" %>
- 
 <br />
  
 <br>
-<%= link_to 'Back to Posts', blog_path %><br>
+<!--<%= link_to 'Back to Posts', blog_path %><br>-->
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

@@ -1,0 +1,33 @@
+<h3>Listting Profiles</h3>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Company name</th>
+    <th>Address</th>
+    <th>Company url</th>
+    <th>About</th>
+    <th>Avatar</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @travel_agent_profiles.each do |travel_agent_profile| %>
+  <tr>
+    <td><%= travel_agent_profile.name %></td>
+    <td><%= travel_agent_profile.company_name %></td>
+    <td><%= travel_agent_profile.address %></td>
+    <td><%= travel_agent_profile.company_url %></td>
+    <td><%= travel_agent_profile.about %></td>
+    <td><%= travel_agent_profile.avatar %></td>
+    <td><%= link_to 'Show', travel_agent_profile %></td>
+    <td><%= link_to 'Edit', edit_travel_agent_profile_path(travel_agent_profile) %></td>
+    <td><%= link_to 'Destroy', travel_agent_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Travel agent profile', new_travel_agent_profile_path %>

@@ -34,3 +34,4 @@ gem "jquery-fileupload-rails"
 gem "carrierwave"
 gem 'tinymce-rails'
 gem "friendly_id"
+gem 'event-calendar', :require => 'event_calendar'
