@@ -5,4 +5,6 @@ class Deal < ActiveRecord::Base
   validates :url, :presence => true
   validates :description, :presence => true
 
+  default_scope order: 'deals.created_at DESC'
+
 end

@@ -35,3 +35,4 @@ gem "carrierwave"
 gem 'tinymce-rails'
 gem "friendly_id"
 gem 'event-calendar', :require => 'event_calendar'
+gem 'will_paginate', '~> 3.0'
