@@ -43,3 +43,46 @@
 
 <center><iframe width="560" height="315" src="http://www.youtube.com/embed/m_AREWFSwdA" frameborder="0" allowfullscreen></iframe></center>
 
+<hr>
+<br>
+<center><h4>Upcoming Events</h4></center>
+<br>
+<table class = "table table-striped">
+  <!--<tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>-->
+
+<% @events.each do |event| %>
+
+ <h6><%= event.name %></h6>
+    
+    <hr>
+    <p><%= truncate_html event.description.html_safe, :length => 20 %>...
+    <%= link_to "Read more", event_path(event) %></p>
+  <br>
+</table>
+
+<% end %>
+<br>
+<hr>
+<br>
+<center><h4>Special Offers</h4></center>
+<br>
+<table class="table table-striped">
+
+    <% @deals.each do |deal| %>
+
+    <h6><%= deal.title %></h6>
+
+        <hr>
+        <p><%= truncate_html deal.description.html_safe, :length => 20 %>...
+            <%= link_to "Read more", deal_path(deal) %></p>
+
+</table>
+
+<% end %>

@@ -1,13 +1,28 @@
 <%= simple_form_for(@deal) do |f| %>
   <%= f.error_notification %>
+  <% if @deal.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@deal.errors.count, "error") %> prohibited
+        this deal from being saved:</h2>
+    <ul>
+    <% @deal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
 
-  <div class="form-inputs">
+  <% if user_signed_in? %>
+  <% if current_user.has_role? :travel_agent %>
+    <%= link_to 'Create a Deal', new_deal_path, :class => "btn btn-success", :style => "color:white;" %>
+  <% end %>
+<% end %>
+
+
+  
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :url %>
-  </div>
 
-  <div class="form-actions">
     <%= f.button :submit %>
-  </div>
 <% end %>
