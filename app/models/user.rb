@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
 
    extend FriendlyId
   	friendly_id :name, use: :slugged
-  end
 
     def add_role_to_user
       if self.travel_agent == true
         self.add_role :travel_agent
       end
+    end
 end
