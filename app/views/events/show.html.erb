@@ -1,0 +1,29 @@
+<h3>Listing Events</h3>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @event.name %>
+</p>
+
+<p>
+  <b>Start at:</b>
+  <%= @event.start_at %>
+</p>
+
+<p>
+  <b>End at:</b>
+  <%= @event.end_at %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @event.description.html_safe %>
+</p>
+
+<br />
+ 
+<br>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', calendar_path %>

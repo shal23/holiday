@@ -27,15 +27,13 @@ module CalendarHelper
       :month => Time.zone.now.month,
       :abbrev => true,
       :first_day_of_week => @first_day_of_week, # See note below when setting this
-      :show_today => true,
+      :show_today => true, 
       :show_header => true,
       :month_name_text => Time.zone.now.strftime("%B %Y"),
       :previous_month_text => nil,
       :next_month_text => nil,
       :event_strips => [],
 
-  # it would be nice to have these in the CSS file
-  # but they are needed to perform height calculations
       :width => nil,
       :height => 500, 
       :day_names_height => 18,
@@ -44,16 +42,9 @@ module CalendarHelper
       :event_margin => 1,
       :event_padding_top => 1,
 
-      :use_all_day => false,
+      :use_all_day => true,
       :use_javascript => true,
-      :link_to_day_action => true
+      :link_to_day_action => false
     }
 
-    calendar event_calendar_options do |args|
-      event, day = args[:event], args[:day]
-      html = %(<a href="/events/#{event.id}" title="#{h(event.name)}">)
-      html << display_event_time(event, day)
-      html << %(#{h(event.name)}</a>)
-      html
-end
 end

@@ -4,5 +4,5 @@ class Deal < ActiveRecord::Base
   validates :title, :presence => true
   validates :url, :presence => true
   validates :description, :presence => true
-  			:length => { :minimum => 5 }
+
 end

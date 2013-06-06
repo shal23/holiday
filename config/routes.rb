@@ -1,9 +1,12 @@
 Holiday::Application.routes.draw do  
 
+  resources :events
+
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
-  match map.calendar_day "/calendar/:year/:month/:day", :controller => "calendar", :action => "day"
+  match 'map.calendar_day "/calendar/:year/:month/:day", :controller => "calendar", :action => "day" '
 
+  
   resources :enquiries
 
 
