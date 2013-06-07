@@ -62,7 +62,7 @@
  <h6><%= event.name %></h6>
     
     <hr>
-    <p><%= truncate_html event.description.html_safe, :length => 20 %>...
+    <p><%= truncate_html event.description.to_s.html_safe, :length => 20 %>...
     <%= link_to "Read more", event_path(event) %></p>
   <br>
 </table>

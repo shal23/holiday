@@ -1,6 +1,6 @@
 class CreateEnquiries < ActiveRecord::Migration
   def change
-    drop_table :enquiries
+    
     create_table :enquiries do |t|
       t.string :name
       t.string :email

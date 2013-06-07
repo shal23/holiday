@@ -27,14 +27,18 @@ Holiday::Application.routes.draw do
   get "blog/index",:id => "blog"
   match "blog" => "blog#index"
 
+  resources :posts do
+    resources :comments
+  end
+
   authenticated :user do
     root :to => 'home#index'
   end
   root :to => "home#index"
   devise_for :users, :controllers => { :registrations => "registrations" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  
   resources :users
 
-  resources :posts do
-    resources :comments
-  end
+
 end

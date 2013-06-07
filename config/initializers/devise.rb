@@ -6,6 +6,11 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
+  require "omniauth-facebook"
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
+  config.omniauth :facebook, "APP_ID", "APP_SECRET"
+ 
+
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 

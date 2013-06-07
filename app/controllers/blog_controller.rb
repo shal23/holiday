@@ -2,7 +2,7 @@ class BlogController < ApplicationController
 
   def index
   	
-  	@posts = Post.all
-  	@posts = Post.where(:active => true).paginate(:page => params[:page]).order('created_at DESC')
+  	# @posts = Post.all
+  	@posts = Post.paginate(:page => params[:page], :per_page => 5).order('created_at DESC')
   end
 end

@@ -1,29 +1,21 @@
-<h3>Blog</h3>
-
 <br>
 <br>
-<% if user_signed_in? %>
-  <% if current_user.has_role? :admin %>
-    <%= link_to 'Create a Post', new_post_path, :class => "btn btn-success", :style => "color:white;" %>
-  <% end %>
-<% end %>
+<div class="pull-right">
+  <%= will_paginate @posts %>
+</div>
+<br>
+<br>
+<h4>Share your experience</h4>
+<br>
+<br>
 
 <% @posts.each do |post| %>
- <h3><%= post.title %></h3>
+ <h5><%= post.name %></h5>
+  <h6><%= post.title %></h6>
     <p>posted on <%= post.created_at.strftime("%e, %b, %Y") %></p>
-    <!--<p>by <%= post.name %>, posted on <%= post.created_at.strftime("%e, %b, %Y") %></p>-->
-    <hr>
-    <p><%= truncate_html post.content.html_safe, :length => 500 %>...
+    <p><%= truncate_html post.content.html_safe, :length => 20 %>...
   <%= link_to "Read more", post_path(post) %></p>
-<% if user_signed_in? %>
-      <% if current_user.has_role? :admin %>
-        <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info", :style => "color:white;" %>
-    <% end %>
-<% end %>
- <% end %>
-
-    <hr>
-
+  <br>
      <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -34,6 +26,14 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
-<div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+      <div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+      <br>
+      <hr>
+      <% if user_signed_in? %>
+        <% if current_user.has_role? :admin %>
+          <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info", :style => "color:white;" %>
+      <% end %>
+  <% end %>
+<% end %>
 
-<%= will_paginate @posts, :page_links => false, :class => 'apple_pagination' %>
+<%= link_to 'Create a Post', new_post_path, :class => "btn btn-success", :style => "color:white;" %>
