@@ -2,27 +2,41 @@
 
 <div class="pull-right">
     <ul class="nav">
-        <li><%= link_to "Attractions", about_path %>
-        </li>
-        <li><%= link_to "Blog", blog_path %>
-        </li>
+        <!--<li><%= link_to "Attractions", about_path %>
+        </li>-->
+
+         <li></i><%= link_to "<i class='icon-map-marker'></i>".html_safe, about_path, :alt => "Map", :title => "Attractions", :class => "nav_icon" %></li>
+
+        <!--<li><%= link_to "Blog", blog_path %>
+        </li>-->
+        <li></i><%= link_to "<i class='icon-comments-alt'></i>".html_safe, blog_path, :alt => "Comment", :title => "Blog", :class => "nav_icon" %></li>
       <% if user_signed_in? %>
-        <li>
+
+        <!--<li>
         <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
-        </li>
+        </li>-->
+        <li></i><%= link_to "<i class='icon-off'></i>".html_safe, destroy_user_session_path, :alt => "Off", :title => "Logout", :class => "nav_icon" %></li>
       <% else %>
-        <li>
+
+        <!--<li>
         <%= link_to 'Login/Sign up', new_user_session_path  %>
-        </li>
-        <li>
+        </li>-->
+        <li></i><%= link_to "<i class='icon-off'></i>".html_safe, new_user_session_path, :alt => "Off", :title => "Login/Sign up", :class => "nav_icon" %></li>
+
+        <!--<li>
           <%= link_to 'Contact', new_enquiry_path %>
-        </li>
-        <li>
+        </li>-->
+        <li></i><%= link_to "<i class='icon-pencil'></i>".html_safe, new_enquiry_path, :alt => "Pencil", :title => "Contact", :class => "nav_icon" %></li>
+
+        <!--<li>
           <%= link_to 'Video', video_index_path %>
-        </li>
-        <li>
+        </li>-->
+        <li></i><%= link_to "<i class='icon-film'></i>".html_safe, video_index_path, :alt => "Play", :class => "nav_icon" %></li>
+
+        <!--<li>
           <%= link_to "Deals", deals_path %>
-        </li>
+        </li>-->
+         <li></i><%= link_to "<i class='icon-heart'></i>".html_safe, deals_path, :alt => "Heart", :title => "Deals", :class => "nav_icon" %></li>
       <% end %>
       <% if user_signed_in? %>
         <li>

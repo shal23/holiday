@@ -1,5 +1,32 @@
 @import url(http://fonts.googleapis.com/css?family=Condiment);
 
+/* ----- Navbar ----- */
+
+
+.navbar-inner {
+  min-height: 40px;
+  padding-right: 40px;
+  padding-left: 20px;
+  background-image: none;
+
+  }
+
+
+  .navbar .brand {
+  display: block;
+  float: left;
+  padding: 10px 20px 10px;
+  margin-top: 10px;
+  margin-left: -20px;
+  font-size: 30px;
+  font-weight: 200;
+  text-shadow: 0 1px 0 #ffffff;
+  font-family: Condiment, cursive;
+}
+
+
+
+
 .content {
   margin-top: 80px;
 }
