@@ -15,13 +15,19 @@
     <td><%= deal.title %></td>
     <td><%= deal.description %></td>
     <td><%= deal.url %></td>
-    <td><%= link_to 'Show', deal %></td>
-    <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
-    <td><%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <!--<td><%= link_to 'Show', deal %></td>-->
+
+    <% if user_signed_in? %>
+      <% if current_user.has_role? :travel_agent, :admin %>
+        <%= link_to 'Edit a Deal', edit_deal_path(deal), :class => "btn btn-success", :style => "color:white;" %>
+        <%= link_to 'Destroy', deal, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Create a new Deal', new_deal_path, :class => "btn btn-success" %>
+
+      <% end %>
+    <% end %>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Deal', new_deal_path %>
+
