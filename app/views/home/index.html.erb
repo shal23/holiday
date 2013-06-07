@@ -1,10 +1,5 @@
-
-<!--<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>-->
-
-
-<center>
+<br>
+<br>
     <div id="myCarousel" class="carousel slide">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -17,46 +12,26 @@
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
-            <div class="active item"><%= image_tag "himachal.jpg" %></div>
-            <div class="item"><%= image_tag "andaman.jpg" %></div>
-            <div class="item"><%= image_tag "sand_dunes.jpg" %></div>
-            <div class="item"><%= image_tag "meerut.jpg" %></div>
-            <div class="item"><%= image_tag "mehendi.jpg" %></div>
-            <div class="item"><%= image_tag "srinagar.jpg" %></div>
+            <div class="active item"><%= image_tag "chittrakoot_falls.jpg" %></div>
+            <div class="item"><%= image_tag "gulmarg.jpg" %></div>
+            <div class="item"><%= image_tag "kutch.jpg" %></div>
+            <div class="item"><%= image_tag "ladakh_nubra.jpg" %></div>
+            <div class="item"><%= image_tag "taj-mahal.jpg" %></div>
             <!--<div class="item"><%= image_tag "thar.jpg" %></div>-->
-            <div class="item"><%= image_tag "sunsets.jpg" %></div>
+            <div class="item"><%= image_tag "sea_link.jpg" %></div>
         </div>
 
         <!-- Carousel nav -->
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
-</center>
 
     <br>
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
-    <br>
-
-<center><iframe width="560" height="315" src="http://www.youtube.com/embed/m_AREWFSwdA" frameborder="0" allowfullscreen></iframe></center>
-
 <hr>
 <br>
-<center><h4>Upcoming Events</h4></center>
+<center><h3><b>Upcoming Events</b></h3></center>
 <br>
 <table class = "table table-striped">
-  <!--<tr>
-    <th>Name</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>-->
-
 <% @events.each do |event| %>
 
  <h6><%= event.name %></h6>
@@ -71,7 +46,7 @@
 <br>
 <hr>
 <br>
-<center><h4>Special Offers</h4></center>
+<center><h3><b>Special Offers</b></h3></center>
 <br>
 <table class="table table-striped">
 
@@ -86,3 +61,5 @@
 </table>
 
 <% end %>
+
+<center><iframe width="560" height="315" src="http://www.youtube.com/embed/m_AREWFSwdA" frameborder="0" allowfullscreen></iframe></center>
