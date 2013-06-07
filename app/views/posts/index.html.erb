@@ -17,7 +17,7 @@
     <td><%= post.title %></td>
     <td><%= truncate(post.content) %></td>
     <td><%= post.created_at.strftime("%e, %b, %Y") %></td>
-    <td><%= link_to 'Show', post %></td>
+    <!--<td><%= link_to 'Show', post %></td>-->
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

@@ -8,5 +8,9 @@ class Post < ActiveRecord::Base
   	validates :title, :presence => true
 
   	has_many :comments, :dependent => :destroy
+
+  	is_impressionable
+
+  	default_scope order: 'posts.created_at DESC'
  
 end
