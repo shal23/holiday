@@ -9,8 +9,6 @@ class Post < ActiveRecord::Base
 
   	has_many :comments, :dependent => :destroy
 
-  	is_impressionable
-
   	default_scope order: 'posts.created_at DESC'
  
 end

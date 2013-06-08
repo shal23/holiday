@@ -37,35 +37,3 @@
 <% end %>
 
 <%= link_to 'Create a Post', new_post_path, :class => "btn btn-success", :style => "color:white;" %>
-
-<!--THIS WILL SHOW THE MOST VIEWED POEM-->
-<% ic = Array.new %>
-<% ps = Array.new %>
-<% @most_viewed_post = [] %>
-
-<% @posts.each do |post| %>
-  <% if post.impressionist_count > 0 %>
-    <% j = ic.push(post.impressionist_count) %>
-    <% p = ps.push(post) %>
-    <% @ic_max_index = j.index(j.max) %>
-    <% @most_viewed_post = p[@ic_max_index]%>
-  <% end %>
-<% end %>
-
-<% if @most_viewed_post != [] %>
-  <h4><%= @user.name %>'s most viewed post is..</h4>
-  <p><strong>User</strong><br>
-  <%= @most_viewed_post.user.name %></p>
-  <p><strong>Title</strong><br>
-  <%= @most_viewed_post.title %></p>
-  <p><strong>Views</strong><br>
-  <%= @most_viewed_post.impressionist_count(:filter=>:ip_address) %></p>
-  <p><strong>Content</strong><br>
-  <%= @most_viewed_post.content %></p>
-<% end %>
-<!---->
-
-<p>View count: <%= @post.impressionist_count(:filter=>:ip_address) %></p>
-<% if @post.impressions.count >= 1 %>
-<p>Last viewed on <%= @post.impressions.last.updated_at.strftime("%e %b %Y") %> by <%= @last_user.name %></p>
-<% end %>
